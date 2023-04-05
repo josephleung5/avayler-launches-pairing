@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch --collect-coverage"
+    "test": "jest --collect-coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
