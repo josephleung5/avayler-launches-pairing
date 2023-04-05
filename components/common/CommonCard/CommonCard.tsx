@@ -1,4 +1,3 @@
-
 import type { Launch } from "../../../types/types"
 import {
   Card,
@@ -7,7 +6,7 @@ import {
   Title,
 } from "@mantine/core";
 
-export type CommonCardProps = {
+type CommonCardProps = {
   launch: Launch;
   handleModalOpen: (launch: Launch) => void;
 }

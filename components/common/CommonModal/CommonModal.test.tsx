@@ -32,7 +32,7 @@ const currentSuccessLaunch: Launch = {
 
 describe('CommonCard', () => {
   it('renders success', () => {
-    render(<CommonModal currentLaunch={currentSuccessLaunch} isModalOpen={true} onClose={() => console.log('close')} />)
+    render(<CommonModal currentLaunch={currentSuccessLaunch} isModalOpen={true} onClose={() => console.log('close')} />);
 
     const successText = screen.getByText('SUCCESS');
 
@@ -40,7 +40,7 @@ describe('CommonCard', () => {
   })
 
   it('renders fail with reason', () => {
-    render(<CommonModal currentLaunch={currentFailedLaunch} isModalOpen={true} onClose={() => console.log('close')} />)
+    render(<CommonModal currentLaunch={currentFailedLaunch} isModalOpen={true} onClose={() => console.log('close')} />);
 
     const failText = screen.getByText('FAIL');
 

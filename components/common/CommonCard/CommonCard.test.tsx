@@ -32,7 +32,7 @@ const successLaunch: Launch = {
 
 describe('CommonCard', () => {
   it('renders success', () => {
-    render(<CommonCard launch={successLaunch} handleModalOpen={() => console.log('open')} />)
+    render(<CommonCard launch={successLaunch} handleModalOpen={() => console.log('open')} />);
 
     const successText = screen.getByText('SUCCESS');
 
@@ -40,7 +40,7 @@ describe('CommonCard', () => {
   })
 
   it('renders fail with reason', () => {
-    render(<CommonCard launch={failLaunch} handleModalOpen={() => console.log('open')} />)
+    render(<CommonCard launch={failLaunch} handleModalOpen={() => console.log('open')} />);
 
     const failText = screen.getByText('FAIL');
 

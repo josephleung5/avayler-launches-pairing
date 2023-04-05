@@ -1,10 +1,17 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { 
+  render,
+  screen,
+  fireEvent 
+} from "@testing-library/react";
 import '@testing-library/jest-dom'
 import HomeListing from "./HomeListing";
-import { LAUNCHES, CORES } from "../../../test/seed/mockData";
+import { 
+  LAUNCHES,
+  CORES
+} from "../../../test/seed/mockData";
 
 const mockFetchSuccess = () => {
-  global.fetch = jest.fn((req, res) => {
+  global.fetch = jest.fn((req) => {
     if (req === 'https://api.spacexdata.com/v5/launches/query') {
       return Promise.resolve({
         json: () => Promise.resolve({ docs: LAUNCHES }),
@@ -64,7 +71,7 @@ describe('Home Component', () => {
     
     fireEvent.click(name_1);
     
-    modal = screen.getByTestId(LAUNCHES[0].id)
+    modal = screen.getByTestId(LAUNCHES[0].id);
     expect(modal).toBeInTheDocument;
   })
 
