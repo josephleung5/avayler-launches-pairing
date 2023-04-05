@@ -11,7 +11,7 @@ export const mergeData = (launches: any, cores: any): Launch[] => {
       imageUrl: launches[i].links.patch.small,
       isSuccess: launches[i].success,
       failureReason: launches[i].success ? '' : launches[i].failures[0].reason,
-      coreName: cores[i].serial,
+      coreName: cores[i]?.serial,
       payloads: launches[i].payloads[0]
     })
   }

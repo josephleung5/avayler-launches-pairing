@@ -27,12 +27,16 @@ export const fetchLaunches = () => {
   return fetch(FETCH_LAUNCHES_URL, fetchLaunchesQuery)
   .then((resp) => resp.json())
   .then((result) => result.docs)
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    throw new Error(err)
+  });
 }
 
-export const fetchCores = (coreId: any) => {
+export const fetchCores = (coreId: string) => {
   return fetch(`${FETCH_CORES_URL}/${coreId}`)
   .then((resp) => resp.json())
   .then((result) => result)
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    throw new Error(err)
+  });
 }
