@@ -1,7 +1,8 @@
 import { render, screen } from "@testing-library/react";
+import type { Launch } from "../../../types/types";
 import CommonModal from "./CommonModal";
 
-const commonModalFailProps = {
+const currentFailedLaunch: Launch = {
   id: '5eb87cd9ffd86e000604b32a',
   name: 'FalconSat',
   dateUTC: '2006-03-24T22:30:00.000Z',
@@ -15,7 +16,7 @@ const commonModalFailProps = {
   failureReason: 'merlin engine failure'
 }
 
-const commonModalSuccessProps = {
+const currentSuccessLaunch: Launch = {
   id: '5eb87cd9ffd86e000604b32a',
   name: 'FalconSat',
   dateUTC: '2006-03-24T22:30:00.000Z',
@@ -31,7 +32,7 @@ const commonModalSuccessProps = {
 
 describe('CommonCard', () => {
   it('renders success', () => {
-    render(<CommonModal currentLaunch={commonModalSuccessProps} isModalOpen={true} onClose={() => console.log('close')} />)
+    render(<CommonModal currentLaunch={currentSuccessLaunch} isModalOpen={true} onClose={() => console.log('close')} />)
 
     const successText = screen.getByText('SUCCESS');
 
@@ -39,7 +40,7 @@ describe('CommonCard', () => {
   })
 
   it('renders fail with reason', () => {
-    render(<CommonModal currentLaunch={commonModalFailProps} isModalOpen={true} onClose={() => console.log('close')} />)
+    render(<CommonModal currentLaunch={currentFailedLaunch} isModalOpen={true} onClose={() => console.log('close')} />)
 
     const failText = screen.getByText('FAIL');
 

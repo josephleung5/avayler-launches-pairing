@@ -19,7 +19,6 @@ const CommonModal = ({
   onClose,
   currentLaunch,
 }: CommonModalProps) => {
-  
   return (
     <>
       {currentLaunch ? (
